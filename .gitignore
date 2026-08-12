@@ -1,0 +1,88 @@
+# --- IDEs ---
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# --- Python ---
+__pycache__/
+__pytest_cache/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Poetry
+.pypoetry/
+.python-version
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+wheels/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Environment / config ---
+.env
+.env.*
+!.env.example
+/local_settings.py
+**/settings/local.py
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Static / Media ---
+media/
+staticfiles/
+
+# --- Testing ---
+.pytest_cache/
+.coverage
+htmlcov/
+.nox/
+test-reports/
+
+# --- Docker ---
+docker-compose.*.yml
+docker-compose.override.yml
+docker-compose-local.yml
+*-compose.yml
+!docker-compose-local.yaml
+Dockerfile.local
+Dockerfile.dev
+
+# --- System ---
+.DS_Store
+Thumbs.db
+
+# --- Pre-commit / lint ---
+.pre-commit-config.yaml
+.pre-commit-cache/
+
+# --- Project-specific (explicitly mentioned by you) ---
+test_main.http
+tester.http
+test.py
+test_data.py
+proxy.py
+start.sh
+upload/
+/atest/
+/private.pem
+/public.pem
