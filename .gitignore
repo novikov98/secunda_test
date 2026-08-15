@@ -62,7 +62,6 @@ test-reports/
 docker-compose.*.yml
 docker-compose.override.yml
 docker-compose-local.yml
-*-compose.yml
 !docker-compose-local.yaml
 Dockerfile.local
 Dockerfile.dev
@@ -72,8 +71,8 @@ Dockerfile.dev
 Thumbs.db
 
 # --- Pre-commit / lint ---
-.pre-commit-config.yaml
 .pre-commit-cache/
+.ruff_cache/
 
 # --- Project-specific (explicitly mentioned by you) ---
 test_main.http
