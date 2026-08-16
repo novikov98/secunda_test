@@ -166,34 +166,3 @@ payments ──payment.new──► payments.new ──отказ──► payme
 | `GATEWAY_MIN_DELAY_SECONDS` | `2.0` | Нижняя граница задержки шлюза |
 | `GATEWAY_MAX_DELAY_SECONDS` | `5.0` | Верхняя граница задержки шлюза |
 | `GATEWAY_SUCCESS_RATE` | `0.9` | Доля успешных платежей |
-
-## Разработка
-
-```bash
-poetry install
-poetry run pytest
-poetry run ruff check app tests
-poetry run black app tests
-poetry run pre-commit install
-```
-
-Тесты юнитовые, БД и брокер им не нужны.
-
-Инфраструктуру для ручной проверки удобно поднять из того же compose:
-
-```bash
-docker compose up -d postgres rabbitmq
-POSTGRES_HOST=localhost poetry run alembic upgrade head
-POSTGRES_HOST=localhost RABBITMQ_HOST=localhost \
-  poetry run uvicorn app.presentation.api.main:app --reload
-POSTGRES_HOST=localhost RABBITMQ_HOST=localhost \
-  poetry run faststream run app.presentation.consumer.main:app
-```
-
-### Миграции
-
-```bash
-poetry run alembic revision --autogenerate -m "описание"
-poetry run alembic upgrade head
-poetry run alembic check   # расхождения моделей и схемы
-```
