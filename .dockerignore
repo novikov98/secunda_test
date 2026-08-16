@@ -1,23 +1,36 @@
-.idea
-coverage
-
+# --- VCS и IDE ---
 .git
 .gitignore
-.gitmodules
-.gitlab-ci.yml
+.idea
+.vscode
 
-log/**/*
-!log/.gitkeep
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
 
-tmp/**/*
-!tmp/cache/.gitkeep
-!tmp/pids/.gitkeep
-!tmp/sessions/.gitkeep
-!tmp/sockets/.gitkeep
+# --- Тесты и линтеры ---
+tests/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.pre-commit-config.yaml
 
-docker
+# --- Docker ---
 Dockerfile
-docker-compose-local.yaml
-env.*
-!env.test
-/packages/
+.dockerignore
+docker-compose*.yml
+docker-compose*.yaml
+
+# --- Окружение и документация ---
+.env
+.env.*
+!.env.example
+README.md
+*.pdf
+
+# --- Система ---
+.DS_Store
